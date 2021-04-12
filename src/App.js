@@ -1,5 +1,4 @@
 import React , {Component} from "react";
-import Appp from "./ff";
 import "./App.css";
 
 
@@ -10,16 +9,14 @@ export default class App extends Component {
     bio:"coding !",
     profession:"web developer",
     visible: false,
+    interval : null,
     count:0
     
   };
   componentDidMount(){
     this.interval = setInterval(()=>this.setState({count:this.state.count+1}),1000)};
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
+  
   handleClick=()=>this.setState({
-    count:0,
     visible:!(this.state.visible)});
 
   render() {
